@@ -25,7 +25,11 @@ jobs:
           gradle-version: "9.6.0"
 
       - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+        uses: android-actions/setup-android@v4
+        with:
+          # Google removed the legacy SDK `tools` package.
+          # Explicitly install only platform-tools so setup-android does not request `tools`.
+          packages: "platform-tools"
 
       - name: Install Android 36 SDK
         run: sdkmanager "platforms;android-36" "build-tools;36.0.0"

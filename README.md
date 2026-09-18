@@ -100,7 +100,7 @@ app/build/outputs/apk/debug/app-debug.apk
 4. The workflow installs JDK 17 + Android 36 SDK, then runs lint, unit tests and `assembleDebug`.
 5. Download the installable APK from the workflow artifact named `ARPitch-debug-<commit>`.
 
-A tag like `v0.1.0` also runs **Release Build**, producing optimized release APK/AAB artifacts. For Play Store distribution, add your real signing pipeline/keystore rather than distributing an unsigned release artifact.
+A tag like `v0.1.1` also runs **Release Build**, producing optimized release APK/AAB artifacts. For Play Store distribution, add your real signing pipeline/keystore rather than distributing an unsigned release artifact.
 
 ## Field workflow
 
