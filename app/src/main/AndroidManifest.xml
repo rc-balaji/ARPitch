@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.CAMERA" />
 
+    <!-- Explicit declaration avoids CAMERA permission implying unsupported ChromeOS hardware.
+         AR support remains mandatory via android.hardware.camera.ar below. -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
     <uses-feature android:name="android.hardware.camera.ar" android:required="true" />
     <uses-feature android:glEsVersion="0x00020000" android:required="true" />
 

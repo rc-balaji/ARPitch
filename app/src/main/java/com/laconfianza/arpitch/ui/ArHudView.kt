@@ -6,6 +6,7 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.RectF
 import android.graphics.Typeface
+import android.util.TypedValue
 import android.view.MotionEvent
 import android.view.View
 import com.laconfianza.arpitch.ArEngineRenderer
@@ -285,5 +286,9 @@ class ArHudView(
         if (abs(yards - yards.toInt()) < 0.03f) yards.toInt().toString() else "%.1f".format(yards)
 
     private fun dp(v: Float) = v * density
-    private fun sp(v: Float) = v * resources.displayMetrics.scaledDensity
+    private fun sp(v: Float) = TypedValue.applyDimension(
+        TypedValue.COMPLEX_UNIT_SP,
+        v,
+        resources.displayMetrics,
+    )
 }
